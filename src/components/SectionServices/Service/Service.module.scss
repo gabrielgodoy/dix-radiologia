@@ -1,0 +1,45 @@
+.service {
+  color: #878787;
+  text-align: center;
+  width: calc(33.3333% - 20px);
+
+  h3 {
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-family: "visbyHeavy", sans-serif;
+  }
+
+  p {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 300;
+  }
+}
+
+.image {
+  border-radius: 50px;
+  margin: 0 auto 15px;
+}
+
+@media screen and (max-width: 750px) {
+  .service {
+    width: calc(50% - 20px);
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .service {
+    width: calc(100% - 20px);
+  }
+}

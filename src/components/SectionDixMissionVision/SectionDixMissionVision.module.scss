@@ -1,0 +1,59 @@
+.missionVisionContainer {
+  display: flex;
+  align-items: flex-start;
+  grid-gap: 60px;
+  margin-top: 40px;
+
+  & > div {
+    width: calc(50% - 10px);
+  }
+}
+
+.pill {
+  background: #16a7a2;
+  border-radius: 50px;
+  padding: 4px 20px;
+  color: white;
+  font-size: 24px;
+  font-family: "visbyBold", sans-serif;
+}
+
+.missionContainer,
+.visionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-gap: 12px;
+}
+
+.missionText,
+.visionText {
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  color: #666;
+  text-align: center;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 800px) {
+  .missionVisionContainer {
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 20px;
+
+    & > div {
+      width: calc(100% - 10px);
+    }
+  }
+
+  .pill {
+    font-size: 18px;
+  }
+
+  .missionText,
+  .visionText {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+  }
+}

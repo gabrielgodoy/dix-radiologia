@@ -1,0 +1,29 @@
+.slide {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background: var(--main-green);
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 765px) {
+  .slide {
+    border-radius: 10px;
+  }
+
+  .caption {
+    font-size: 14px;
+    padding: 8px 16px;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,130 @@
+.sectionTech {
+  background: linear-gradient(360deg, #16a7a2 0%, #235d5a 100%);
+  padding-top: 45px;
+  margin-bottom: 30px;
+  scroll-margin-top: 120px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  grid-gap: 25px;
+  z-index: 1;
+  width: 100%;
+}
+
+.textContainer {
+  max-width: 460px;
+  padding: 0 0 100px;
+  width: 50%;
+}
+
+.sliderContainer {
+  max-width: 50%;
+
+  :global(.slick-track) {
+    display: flex !important;
+    align-items: flex-end;
+  }
+
+  :global(.slick-track .slick-slide) {
+    display: flex !important;
+    height: auto !important; /* Force slides to have equal height based on the tallest item */
+    align-items: flex-end !important; /* Align content to the bottom */
+    justify-content: center; /* Center horizontally (optional) */
+  }
+
+  :global(.slick-slide > div) {
+    width: 100%;
+  }
+}
+
+:global(.slick-prev):before,
+:global(.slick-next):before {
+  color: #ffffff;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 36px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  font-family: "visbyHeavy", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.subtitle {
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 200;
+}
+
+.raysTech {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 690px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    grid-gap: 0;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .textContainer {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .textContainer {
+    width: 100%;
+  }
+
+  .sliderContainer {
+    max-width: 100%;
+  }
+
+  .sectionTech {
+    :global(.slick-next),
+    :global(.slick-prev) {
+      top: 82%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .sectionTech {
+    :global(.slick-next) {
+      z-index: 100;
+      right: 0;
+    }
+
+    :global(.slick-prev) {
+      z-index: 100;
+      left: 0;
+    }
+  }
+}

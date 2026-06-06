@@ -1,0 +1,75 @@
+.unitContainer {
+  background: #ffffff;
+  box-shadow:
+    0px 2px 4px rgba(0, 0, 0, 0.04),
+    0px 8px 24px -4px rgba(0, 0, 0, 0.08);
+  border-radius: 30px;
+  width: 50%;
+  overflow: hidden;
+  padding: 10px;
+
+  :global(.leaflet-container) {
+    border-radius: 20px;
+  }
+
+  :global(.leaflet-control-attribution) {
+    display: none;
+  }
+}
+
+.unitName {
+  display: flex;
+  align-items: center;
+  grid-gap: 10px;
+  background: var(--main-green);
+  padding: 4px 25px 4px 30px;
+  margin: 20px 0 0 -10px;
+  width: fit-content;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  color: white;
+  font-size: 24px;
+  font-family: "visbyBold", sans-serif;
+}
+
+.unitInfo {
+  padding: 10px 20px;
+}
+
+.infoBlock {
+  margin-bottom: 18px;
+}
+
+.unitInfoTitle {
+  font-family: "visbyBold", sans-serif;
+}
+
+.unitAddress {
+  font-weight: 300;
+  font-family: "Inter";
+  font-size: 14px;
+  color: #666;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+  grid-gap: 20px;
+}
+
+.infoRightSide {
+  display: flex;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 825px) {
+  .unitContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .unitName {
+    font-size: 18px;
+  }
+}
