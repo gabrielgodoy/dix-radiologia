@@ -22,7 +22,6 @@ function App() {
 
   return (
     <main>
-      teste 2
       <img src={rays} alt="Raios da logo da Dix" className={style.rays} />
       <Navbar
         servicesRef={servicesRef}
