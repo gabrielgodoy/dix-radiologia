@@ -11,4 +11,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  base: process.env.CI_PAGES_URL
+    ? new URL(process.env.CI_PAGES_URL).pathname
+    : "/",
 });
