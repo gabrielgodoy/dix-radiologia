@@ -7,6 +7,7 @@ import pin from "@/assets/images/pin.svg";
 import { UnitMap } from "../UnitMap/UnitMap";
 import { JSX } from "react/jsx-runtime";
 import { GoogleReviewBadge } from "../GoogleReviewBadge/GoogleReviewBadge";
+import { use, useEffect, useRef } from "react";
 
 interface UnitProps {
   position: LatLngExpression;
@@ -14,6 +15,7 @@ interface UnitProps {
   address: JSX.Element;
   contact: JSX.Element;
   hours: JSX.Element;
+  elfsightApp: string;
 }
 
 export const Unit = ({
@@ -22,6 +24,7 @@ export const Unit = ({
   address,
   contact,
   hours,
+  elfsightApp,
 }: UnitProps) => {
   return (
     <div className={style.unitContainer}>
@@ -47,8 +50,7 @@ export const Unit = ({
             </div>
           </div>
           <div className={style.infoRightSide}>
-            {/* <GoogleReviewBadge />  */}{" "}
-            {/* Google review is not working right now */}
+            <div className={elfsightApp} data-elfsight-app-lazy></div>
           </div>
         </div>
       </div>

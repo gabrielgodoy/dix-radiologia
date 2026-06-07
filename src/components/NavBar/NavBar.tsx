@@ -117,33 +117,12 @@ export const Navbar = ({
           />
         </div>
         <ul className={cx(style.navLinks)}>
-          <li>
-            <a href="#exames" onClick={() => handleScroll(servicesRef)}>
-              Serviços
-            </a>
-          </li>
-          <li>
-            <a href="#tecnologia" onClick={() => handleScroll(techRef)}>
-              Tecnologia
-            </a>
-          </li>
-          <li>
-            <a href="#convenios" onClick={() => handleScroll(conveniosRef)}>
-              Convênios
-            </a>
-          </li>
-          <li>
-            <a href="#unidades" onClick={() => handleScroll(unitsRef)}>
-              Unidades
-            </a>
-          </li>
-          <li>
-            <a
-              href="#porque-escolher-a-dix"
-              onClick={() => handleScroll(whyDixRef)}
-            >
-              Por que escolher a Dix
-            </a>
+          <li onClick={() => handleScroll(servicesRef)}>Serviços</li>
+          <li onClick={() => handleScroll(techRef)}>Tecnologia</li>
+          <li onClick={() => handleScroll(conveniosRef)}>Convênios</li>
+          <li onClick={() => handleScroll(unitsRef)}>Unidades</li>
+          <li onClick={() => handleScroll(whyDixRef)}>
+            Por que escolher a Dix
           </li>
         </ul>
         <div className={style.social}>
