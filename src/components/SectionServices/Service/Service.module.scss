@@ -62,9 +62,31 @@
   }
 }
 
+.slide {
+  img {
+    border-radius: 40px;
+  }
+
+  .caption {
+    font-size: 14px;
+    color: #878787;
+    margin-top: 5px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    padding: 10px 30px;
+  }
+}
+
 @media screen and (max-width: 650px) {
+  .slide {
+    img {
+      border-radius: 10px;
+    }
+  }
+
   :global(.serviceModal.ReactModal__Content) {
     padding: 10px !important;
+    border-radius: 10px !important;
 
     :global(.slick-prev):before,
     :global(.slick-next):before {
@@ -91,21 +113,6 @@
   }
 }
 
-.slide {
-  img {
-    border-radius: 40px;
-  }
-
-  .caption {
-    font-size: 14px;
-    color: #878787;
-    margin-top: 5px;
-    text-align: center;
-    font-family: "Inter", sans-serif;
-    padding: 10px 30px;
-  }
-}
-
 @media screen and (max-width: 750px) {
   .service {
     width: calc(50% - 20px);
@@ -126,6 +133,7 @@
 
 @media screen and (max-width: 450px) {
   .service {
+    border-radius: 10px;
     width: calc(100% - 20px);
   }
 
