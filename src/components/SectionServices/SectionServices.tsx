@@ -3,6 +3,7 @@ import cx from "classnames";
 import style from "./SectionServices.module.scss";
 import { Service } from "./Service/Service";
 import service1 from "@/assets/images/services/servico-1.jpg";
+import service1_1 from "@/assets/images/services/servico-1-1.jpg";
 import service2 from "@/assets/images/services/servico-2.jpg";
 import service3 from "@/assets/images/services/servico-3.jpg";
 import service4 from "@/assets/images/services/servico-4.jpg";
@@ -27,6 +28,13 @@ export const SectionServices = ({
           imgSrc={service1}
           title="Imagens digitais intra e extraorais"
           text="Imagens digitais intra e extraorais com qualidade, precisão e rapidez para o diagnóstico odontológico."
+          slides={[
+            {
+              caption:
+                "A radiografia panorâmica é uma ferramenta valiosa para os dentistas, permitindo uma visualização completa da boca, dentes e ossos da face em uma única imagem.",
+              imgSrc: service1_1,
+            },
+          ]}
         />
         <Service
           imgSrc={service2}

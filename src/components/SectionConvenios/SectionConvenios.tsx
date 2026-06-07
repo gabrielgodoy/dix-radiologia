@@ -1,6 +1,7 @@
 import amilDental from "@/assets/images/convenios/amil-dental.jpg";
 import brazilDental from "@/assets/images/convenios/brazil-dental.jpg";
 import goldenCross from "@/assets/images/convenios/golden-cross.jpg";
+import hapvida from "@/assets/images/convenios/hapvida.jpg";
 import inpao from "@/assets/images/convenios/inpao.jpg";
 import interodonto from "@/assets/images/convenios/interodonto.jpg";
 import itaprevi from "@/assets/images/convenios/itaprevi.jpg";
@@ -38,6 +39,7 @@ export const SectionConvenios = ({
         <Convenio name="Amil Dental" imageSrc={amilDental} />
         <Convenio name="Brazil Dental" imageSrc={brazilDental} />
         <Convenio name="Golden Cross" imageSrc={goldenCross} />
+        <Convenio name="Hapvida" imageSrc={hapvida} />
         <Convenio name="Inpao" imageSrc={inpao} />
         <Convenio name="Interodonto" imageSrc={interodonto} />
         <Convenio name="Itaprevi" imageSrc={itaprevi} />

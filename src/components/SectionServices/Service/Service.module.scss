@@ -1,13 +1,23 @@
 .service {
   color: #878787;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: calc(33.3333% - 20px);
+  padding: 10px 10px 20px;
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow:
+    0px 2px 4px rgba(0, 0, 0, 0.04),
+    0px 8px 24px -4px rgba(0, 0, 0, 0.08);
 
   h3 {
     font-size: 20px;
     line-height: 1;
     margin-bottom: 10px;
     font-family: "visbyHeavy", sans-serif;
+    padding: 0 10px;
   }
 
   p {
@@ -16,12 +26,84 @@
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: 300;
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+
+  button {
+    margin-top: auto;
   }
 }
 
 .image {
-  border-radius: 50px;
+  border-radius: 40px;
   margin: 0 auto 15px;
+}
+
+:global(.ReactModal__Overlay) {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+:global(.ReactModal__Overlay--after-open) {
+  opacity: 1;
+}
+
+:global(.ReactModal__Overlay--before-close) {
+  opacity: 0;
+}
+
+.sliderContainer {
+  max-width: 800px;
+
+  :global(.slick-prev):before,
+  :global(.slick-next):before {
+    color: #878787;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  :global(.serviceModal.ReactModal__Content) {
+    padding: 10px !important;
+
+    :global(.slick-prev):before,
+    :global(.slick-next):before {
+      color: #fff;
+      box-shadow:
+        0px 2px 4px rgba(0, 0, 0, 0.5),
+        0px 8px 24px -4px rgba(0, 0, 0, 0.08);
+      border-radius: 50%;
+    }
+
+    :global(.slick-prev) {
+      left: 10px;
+      z-index: 200;
+    }
+
+    :global(.slick-next) {
+      right: 10px;
+      z-index: 200;
+    }
+
+    :global(.slick-dots) {
+      display: none;
+    }
+  }
+}
+
+.slide {
+  img {
+    border-radius: 40px;
+  }
+
+  .caption {
+    font-size: 14px;
+    color: #878787;
+    margin-top: 5px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    padding: 10px 30px;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -36,10 +118,18 @@
       font-size: 16px;
     }
   }
+
+  .image {
+    border-radius: 30px;
+  }
 }
 
 @media screen and (max-width: 450px) {
   .service {
     width: calc(100% - 20px);
+  }
+
+  .image {
+    border-radius: 10px;
   }
 }
