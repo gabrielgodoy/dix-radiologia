@@ -6,8 +6,7 @@ import style from "./Unit.module.scss";
 import pin from "@/assets/images/pin.svg";
 import { UnitMap } from "../UnitMap/UnitMap";
 import { JSX } from "react/jsx-runtime";
-import { GoogleReviewBadge } from "../GoogleReviewBadge/GoogleReviewBadge";
-import { use, useEffect, useRef } from "react";
+import { ElfsightWidget } from "react-elfsight-widget";
 
 interface UnitProps {
   position: LatLngExpression;
@@ -15,7 +14,7 @@ interface UnitProps {
   address: JSX.Element;
   contact: JSX.Element;
   hours: JSX.Element;
-  elfsightApp: string;
+  elfsightAppId: string;
 }
 
 export const Unit = ({
@@ -24,7 +23,7 @@ export const Unit = ({
   address,
   contact,
   hours,
-  elfsightApp,
+  elfsightAppId,
 }: UnitProps) => {
   return (
     <div className={style.unitContainer}>
@@ -50,7 +49,7 @@ export const Unit = ({
             </div>
           </div>
           <div className={style.infoRightSide}>
-            <div className={elfsightApp} data-elfsight-app-lazy></div>
+            <ElfsightWidget widgetId={elfsightAppId} />
           </div>
         </div>
       </div>
