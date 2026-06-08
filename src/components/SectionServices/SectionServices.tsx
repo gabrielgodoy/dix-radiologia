@@ -11,6 +11,8 @@ import service2_3 from "@/assets/images/services/servico-2-3.jpg";
 import service3 from "@/assets/images/services/servico-3.jpg";
 import service4 from "@/assets/images/services/servico-4.jpg";
 import service5 from "@/assets/images/services/servico-5.jpg";
+import service5_1 from "@/assets/images/services/servico-5-1.jpg";
+import service5_2 from "@/assets/images/services/servico-5-2.jpg";
 import service6 from "@/assets/images/services/servico-6.jpg";
 
 export const SectionServices = ({
@@ -45,18 +47,43 @@ export const SectionServices = ({
           text="Tomografia computadorizada 3D de alta precisão, proporcionando imagens detalhadas para diagnósticos e planejamentos odontológicos mais seguros."
           slides={[
             {
-              caption:
-                "Indicação: Avaliação detalhada de um dente ou região específica. | Aplicações: Excelente para detectar canais radiculares, fraturas e outras patologias que requerem alta resolução. | Benefício: Proporciona imagens extremamente precisas para tratamentos endodônticos e diagnósticos focados.",
+              caption: (
+                <>
+                  <strong>Indicação:</strong> Avaliação detalhada de um dente ou
+                  região específica. | <strong>Aplicações:</strong> Excelente
+                  para detectar canais radiculares, fraturas e outras patologias
+                  que requerem alta resolução. | <strong>Benefício:</strong>{" "}
+                  Proporciona imagens extremamente precisas para tratamentos
+                  endodônticos e diagnósticos focados.
+                </>
+              ),
               imgSrc: service2_1,
             },
             {
-              caption:
-                "Indicação: Avaliação de uma arcada completa. | Aplicações: Ideal para casos que envolvem múltiplos dentes inclusos, planejamento de implantes e ortodontia. | Benefício: Fornece uma visão abrangente da arcada dentária, permitindo um planejamento mais integrado e abrangente.",
+              caption: (
+                <>
+                  <strong>Indicação:</strong> Avaliação de uma arcada completa.
+                  | <strong>Aplicações:</strong> Ideal para casos que envolvem
+                  múltiplos dentes inclusos, planejamento de implantes e
+                  ortodontia. | <strong>Benefício:</strong> Fornece uma visão
+                  abrangente da arcada dentária, permitindo um planejamento mais
+                  integrado e abrangente.
+                </>
+              ),
               imgSrc: service2_2,
             },
             {
-              caption:
-                "Indicação: Avaliação óssea da face. | Aplicações: Perfeito para cirurgias complexas que exigem uma análise completa da estrutura óssea facial. | Benefício: Permite a visualização de grandes áreas, essencial para cirurgias ortognáticas e planejamento cirúrgico detalhado, embora com menor definição de estruturas menores.",
+              caption: (
+                <>
+                  <strong>Indicação:</strong> Avaliação óssea da face. |{" "}
+                  <strong>Aplicações:</strong> Perfeito para cirurgias complexas
+                  que exigem uma análise completa da estrutura óssea facial. |{" "}
+                  <strong>Benefício:</strong> Permite a visualização de grandes
+                  áreas, essencial para cirurgias ortognáticas e planejamento
+                  cirúrgico detalhado, embora com menor definição de estruturas
+                  menores.
+                </>
+              ),
               imgSrc: service2_3,
             },
           ]}
@@ -75,6 +102,17 @@ export const SectionServices = ({
           imgSrc={service5}
           title="Escaneamento Intraoral e Extraoral"
           text="Escaneamento intraoral e extraoral rápido e preciso, proporcionando mais conforto e eficiência no planejamento odontológico."
+          slides={[
+            {
+              caption:
+                "Dispositivo de alta precisão que permite aos dentistas capturar imagens tridimensionais detalhadas da boca.",
+              imgSrc: service5_1,
+            },
+            {
+              caption: "Modelo 3D impresso em Resina",
+              imgSrc: service5_2,
+            },
+          ]}
         />
         <Service
           imgSrc={service6}

@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import { Button } from "../../Button/Button";
 import ReactModal from "react-modal";
 import style from "./Service.module.scss";
-import { useState } from "react";
+import { JSX, useState } from "react";
 
 export const Service = ({
   imgSrc,
@@ -13,7 +13,7 @@ export const Service = ({
   imgSrc: string;
   title: string;
   text: string;
-  slides?: { caption: string; imgSrc: string }[];
+  slides?: { caption: string | JSX.Element; imgSrc: string }[];
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -74,7 +74,14 @@ export const Service = ({
           <SliderComponent {...settings}>
             {slides?.map((slide, index) => (
               <div key={index} className={style.slide}>
-                <img src={slide.imgSrc} alt={slide.caption} />
+                <img
+                  src={slide.imgSrc}
+                  alt={
+                    typeof slide.caption === "string"
+                      ? slide.caption
+                      : "Slide image"
+                  }
+                />
                 <p className={style.caption}>{slide.caption}</p>
               </div>
             ))}
