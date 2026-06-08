@@ -48,7 +48,7 @@ export const Unit = ({
             </div>
           </div>
           <div className={style.infoRightSide}>
-            <div className={elfsightAppId}></div>
+            <div className={elfsightAppId} data-elfsight-app-lazy></div>
           </div>
         </div>
       </div>
