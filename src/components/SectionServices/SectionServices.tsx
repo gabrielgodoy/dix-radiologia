@@ -5,6 +5,9 @@ import { Service } from "./Service/Service";
 import service1 from "@/assets/images/services/servico-1.jpg";
 import service1_1 from "@/assets/images/services/servico-1-1.jpg";
 import service2 from "@/assets/images/services/servico-2.jpg";
+import service2_1 from "@/assets/images/services/servico-2-1.jpg";
+import service2_2 from "@/assets/images/services/servico-2-2.jpg";
+import service2_3 from "@/assets/images/services/servico-2-3.jpg";
 import service3 from "@/assets/images/services/servico-3.jpg";
 import service4 from "@/assets/images/services/servico-4.jpg";
 import service5 from "@/assets/images/services/servico-5.jpg";
@@ -40,6 +43,23 @@ export const SectionServices = ({
           imgSrc={service2}
           title="Tomografia Computadorizada (3D Cone Beam)"
           text="Tomografia computadorizada 3D de alta precisão, proporcionando imagens detalhadas para diagnósticos e planejamentos odontológicos mais seguros."
+          slides={[
+            {
+              caption:
+                "Indicação: Avaliação detalhada de um dente ou região específica. | Aplicações: Excelente para detectar canais radiculares, fraturas e outras patologias que requerem alta resolução. | Benefício: Proporciona imagens extremamente precisas para tratamentos endodônticos e diagnósticos focados.",
+              imgSrc: service2_1,
+            },
+            {
+              caption:
+                "Indicação: Avaliação de uma arcada completa. | Aplicações: Ideal para casos que envolvem múltiplos dentes inclusos, planejamento de implantes e ortodontia. | Benefício: Fornece uma visão abrangente da arcada dentária, permitindo um planejamento mais integrado e abrangente.",
+              imgSrc: service2_2,
+            },
+            {
+              caption:
+                "Indicação: Avaliação óssea da face. | Aplicações: Perfeito para cirurgias complexas que exigem uma análise completa da estrutura óssea facial. | Benefício: Permite a visualização de grandes áreas, essencial para cirurgias ortognáticas e planejamento cirúrgico detalhado, embora com menor definição de estruturas menores.",
+              imgSrc: service2_3,
+            },
+          ]}
         />
         <Service
           imgSrc={service3}

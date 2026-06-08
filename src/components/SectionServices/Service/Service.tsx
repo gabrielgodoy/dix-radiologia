@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import { Button } from "../../Button/Button";
 import ReactModal from "react-modal";
 import style from "./Service.module.scss";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 export const Service = ({
   imgSrc,
