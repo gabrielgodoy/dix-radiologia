@@ -18,7 +18,7 @@ export const SectionUnits = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
       <div className={style.unitsContainer}>
         <Unit
           position={[-22.746446415507197, -42.85834317790927]}
-          elfsightAppId="991ad323-7cec-48bb-86ee-79e72c749e65"
+          elfsightAppId="elfsight-app-991ad323-7cec-48bb-86ee-79e72c749e65"
           unitName="Itaboraí"
           address={
             <>
@@ -42,7 +42,7 @@ export const SectionUnits = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
         />
         <Unit
           position={[-22.89580938856696, -43.120921837435944]}
-          elfsightAppId="c97095b7-063b-47ce-a970-f9a9d629b1ef"
+          elfsightAppId="elfsight-app-c97095b7-063b-47ce-a970-f9a9d629b1ef"
           unitName="Niterói"
           address={
             <>

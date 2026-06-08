@@ -6,7 +6,6 @@ import style from "./Unit.module.scss";
 import pin from "@/assets/images/pin.svg";
 import { UnitMap } from "../UnitMap/UnitMap";
 import { JSX } from "react/jsx-runtime";
-import { ElfsightWidget } from "react-elfsight-widget";
 
 interface UnitProps {
   position: LatLngExpression;
@@ -49,7 +48,7 @@ export const Unit = ({
             </div>
           </div>
           <div className={style.infoRightSide}>
-            <ElfsightWidget widgetId={elfsightAppId} />
+            <div className={elfsightAppId}></div>
           </div>
         </div>
       </div>
