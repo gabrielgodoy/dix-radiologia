@@ -100,7 +100,7 @@ export const SectionServices = ({
         />
         <Service
           imgSrc={service5}
-          title="Escaneamento Intraoral e Extraoral"
+          title="Escaneamento Intraoral e Modelos 3D"
           text="Escaneamento intraoral e extraoral rápido e preciso, proporcionando mais conforto e eficiência no planejamento odontológico."
           slides={[
             {
