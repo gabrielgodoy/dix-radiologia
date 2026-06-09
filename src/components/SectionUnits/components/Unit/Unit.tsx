@@ -14,7 +14,6 @@ interface UnitProps {
   address: JSX.Element;
   contact: JSX.Element;
   hours: JSX.Element;
-  elfsightAppId: string;
 }
 
 export const Unit = ({
@@ -23,20 +22,7 @@ export const Unit = ({
   address,
   contact,
   hours,
-  elfsightAppId,
 }: UnitProps) => {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://static.elfsight.com/platform/platform.js";
-    script.setAttribute("data-use-service-core", "");
-    script.defer = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <div className={style.unitContainer}>
       <UnitMap position={position} />
@@ -60,9 +46,7 @@ export const Unit = ({
               <div className={style.unitAddress}>{hours}</div>
             </div>
           </div>
-          <div className={style.infoRightSide}>
-            <div className={elfsightAppId} data-elfsight-app-lazy></div>
-          </div>
+          <div className={style.infoRightSide}></div>
         </div>
       </div>
     </div>
