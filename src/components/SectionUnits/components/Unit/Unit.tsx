@@ -6,6 +6,7 @@ import style from "./Unit.module.scss";
 import pin from "@/assets/images/pin.svg";
 import { UnitMap } from "../UnitMap/UnitMap";
 import { JSX } from "react/jsx-runtime";
+import { useEffect } from "react";
 
 interface UnitProps {
   position: LatLngExpression;
@@ -24,6 +25,18 @@ export const Unit = ({
   hours,
   elfsightAppId,
 }: UnitProps) => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://static.elfsight.com/platform/platform.js";
+    script.setAttribute("data-use-service-core", "");
+    script.defer = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className={style.unitContainer}>
       <UnitMap position={position} />
