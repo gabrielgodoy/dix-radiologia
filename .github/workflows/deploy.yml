@@ -29,11 +29,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Uses a stable Node LTS version
+          node-version: 22 # Uses a stable Node LTS version
           cache: "npm" # Change to 'pnpm' or 'yarn' if using alternative package managers
 
       - name: Install Dependencies
-        run: npm ci # Use 'npm install' if you do not have a package-lock.json
+        run: |
+          rm -rf node_modules
+          rm -rf package-lock.json # or pnpm-lock.yaml / yarn.lock
+          npm install # or pnpm install --no-frozen-lockfile
 
       - name: Build Project
         run: npm run build
