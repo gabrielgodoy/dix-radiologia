@@ -1,0 +1,187 @@
+.headerComponentTop {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font:
+    400 14px / 18px system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+.headerContainerInner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(246, 246, 248);
+  padding: 24px;
+  border-radius: inherit;
+}
+
+.headerInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.headerHeadingContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.iconContainer {
+  height: 32px;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
+  }
+
+  svg {
+    transition: fill 0.2s;
+    display: block;
+    object-fit: contain;
+    height: 32px;
+  }
+}
+
+.headerHeadingText {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  color: rgb(17, 17, 17);
+  text-transform: capitalize;
+  position: relative;
+  top: -1px;
+}
+
+.headerRatingContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.ratingValue {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  color: rgb(17, 17, 17);
+  word-break: normal !important;
+}
+
+.ratingBarContainer {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.ratingItemFilled {
+  position: relative;
+  width: 22px;
+  height: 22px;
+
+  svg {
+    position: static !important;
+    width: 100% !important;
+    height: 100% !important;
+
+    path {
+      fill: rgb(252, 191, 2) !important;
+    }
+  }
+}
+
+.ratingItemUnfilled svg path {
+  fill: rgba(17, 17, 17, 0.2) !important;
+}
+
+.ratingPartiallyFilled {
+  clip-path: inset(0px 80% 0px 0px);
+}
+
+.ratingItemUnfilled {
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+  line-height: 0;
+}
+
+.reviewsCount {
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(17, 17, 17, 0.5);
+}
+
+.headerWriteReviewButton {
+  isplay: inline-flex;
+  position: relative;
+  max-width: 100%;
+
+  a {
+    position: relative;
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    max-width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    background: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    border-style: solid;
+    transition-property:
+      opacity, transform, color, background-color, border-color;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+
+    border-radius: 24px;
+    border-color: rgba(0, 0, 0, 0);
+    line-height: 18px;
+    color: rgb(255, 255, 255);
+    padding: 0px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: rgb(25, 123, 255);
+    text-transform: none;
+    border-width: 2px;
+
+    > span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      transition-property:
+        opacity, transform, color, background-color, border-color;
+      transition-duration: 0.1s;
+      transition-timing-function: ease-in;
+
+      padding: 7px 19px;
+      border-radius: calc(22px);
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+}

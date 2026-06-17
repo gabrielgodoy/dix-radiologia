@@ -38,6 +38,10 @@ export const SectionUnits = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
               Sábado: 9h às 12h30
             </>
           }
+          googleScore={4.8}
+          googleTotalCount={32}
+          googleStarProgress={30}
+          googleLinkToReview="https://g.page/r/CVoeJp2NUm-xEBM/review"
         />
         <Unit
           position={[-22.89580938856696, -43.120921837435944]}
@@ -60,6 +64,10 @@ export const SectionUnits = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
               Sábado: 9h às 13h
             </>
           }
+          googleScore={4.9}
+          googleTotalCount={106}
+          googleStarProgress={15}
+          googleLinkToReview="https://g.page/r/CSgqIzMKhtexEBM/review"
         />
       </div>
     </div>

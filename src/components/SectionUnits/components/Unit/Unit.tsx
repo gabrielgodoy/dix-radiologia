@@ -7,6 +7,7 @@ import pin from "@/assets/images/pin.svg";
 import { UnitMap } from "../UnitMap/UnitMap";
 import { JSX } from "react/jsx-runtime";
 import { useEffect } from "react";
+import { GoogleReview } from "../GoogleReview/GoogleReview";
 
 interface UnitProps {
   position: LatLngExpression;
@@ -14,6 +15,10 @@ interface UnitProps {
   address: JSX.Element;
   contact: JSX.Element;
   hours: JSX.Element;
+  googleScore: number;
+  googleTotalCount: number;
+  googleStarProgress: number;
+  googleLinkToReview: string;
 }
 
 export const Unit = ({
@@ -22,6 +27,10 @@ export const Unit = ({
   address,
   contact,
   hours,
+  googleScore,
+  googleTotalCount,
+  googleStarProgress,
+  googleLinkToReview,
 }: UnitProps) => {
   return (
     <div className={style.unitContainer}>
@@ -46,7 +55,14 @@ export const Unit = ({
               <div className={style.unitAddress}>{hours}</div>
             </div>
           </div>
-          <div className={style.infoRightSide}></div>
+        </div>
+        <div className={style.infoBlock}>
+          <GoogleReview
+            score={googleScore}
+            totalCount={googleTotalCount}
+            lastStarProgress={googleStarProgress}
+            linkToReview={googleLinkToReview}
+          />
         </div>
       </div>
     </div>

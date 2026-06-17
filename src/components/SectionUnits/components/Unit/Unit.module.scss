@@ -57,10 +57,9 @@
   grid-gap: 20px;
 }
 
-.infoRightSide {
+.infoLeftSide {
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  grid-gap: 40px;
 }
 
 @media screen and (max-width: 825px) {
@@ -79,10 +78,12 @@
   .infoContainer {
     flex-direction: column;
   }
+}
 
-  .infoRightSide {
-    align-items: center;
-    justify-content: center;
+@media screen and (max-width: 415px) {
+  .infoLeftSide {
+    flex-direction: column;
+    grid-gap: 8px;
   }
 }
 
