@@ -1,4 +1,3 @@
-"use client";
 import Slider from "react-slick";
 import { Slide } from "../Slide/Slide";
 import morita from "@/assets/images/equipments/morita.png";

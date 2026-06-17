@@ -1,4 +1,3 @@
-"use client";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import { LatLngExpression } from "leaflet";
@@ -6,7 +5,6 @@ import style from "./Unit.module.scss";
 import pin from "@/assets/images/pin.svg";
 import { UnitMap } from "../UnitMap/UnitMap";
 import { JSX } from "react/jsx-runtime";
-import { useEffect } from "react";
 import { GoogleReview } from "../GoogleReview/GoogleReview";
 
 interface UnitProps {
