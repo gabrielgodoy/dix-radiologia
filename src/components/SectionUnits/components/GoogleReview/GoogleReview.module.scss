@@ -191,16 +191,28 @@
     flex-direction: column;
     grid-gap: 12px;
   }
+
+  .headerHeadingContainer {
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 825px) {
   .headerContainerInner {
     flex-direction: row;
   }
+
+  .headerHeadingContainer {
+    justify-content: flex-start;
+  }
 }
 
 @media screen and (max-width: 575px) {
   .headerContainerInner {
     flex-direction: column;
+  }
+
+  .headerHeadingContainer {
+    justify-content: center;
   }
 }
