@@ -17,7 +17,6 @@ interface UnitProps {
   hours: JSX.Element;
   googleScore: number;
   googleTotalCount: number;
-  googleStarProgress: number;
   googleLinkToReview: string;
 }
 
@@ -29,7 +28,6 @@ export const Unit = ({
   hours,
   googleScore,
   googleTotalCount,
-  googleStarProgress,
   googleLinkToReview,
 }: UnitProps) => {
   return (
@@ -60,7 +58,6 @@ export const Unit = ({
           <GoogleReview
             score={googleScore}
             totalCount={googleTotalCount}
-            lastStarProgress={googleStarProgress}
             linkToReview={googleLinkToReview}
           />
         </div>

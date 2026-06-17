@@ -96,12 +96,16 @@
   align-items: center;
 }
 
-.ratingItemFilled {
+.ratingItemFilledContainer {
   position: relative;
   width: 22px;
   height: 22px;
+}
 
-  svg {
+.ratingItemFilled {
+  position: relative;
+
+  > svg {
     position: static !important;
     width: 100% !important;
     height: 100% !important;
@@ -114,10 +118,6 @@
 
 .ratingItemUnfilled svg path {
   fill: rgba(17, 17, 17, 0.2) !important;
-}
-
-.ratingPartiallyFilled {
-  clip-path: inset(0px 80% 0px 0px);
 }
 
 .ratingItemUnfilled {

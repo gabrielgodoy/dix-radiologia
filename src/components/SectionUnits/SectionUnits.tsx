@@ -40,7 +40,6 @@ export const SectionUnits = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
           }
           googleScore={4.8}
           googleTotalCount={33}
-          googleStarProgress={20}
           googleLinkToReview="https://g.page/r/CVoeJp2NUm-xEBM/review"
         />
         <Unit
@@ -66,7 +65,6 @@ export const SectionUnits = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
           }
           googleScore={4.9}
           googleTotalCount={106}
-          googleStarProgress={10}
           googleLinkToReview="https://g.page/r/CSgqIzMKhtexEBM/review"
         />
       </div>
