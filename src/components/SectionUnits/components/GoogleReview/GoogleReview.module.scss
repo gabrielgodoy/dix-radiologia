@@ -39,7 +39,7 @@
   gap: 6px;
 }
 
-.iconContainer {
+.googleIconContainer {
   height: 32px;
 
   & > div {
@@ -183,5 +183,24 @@
       border-radius: calc(22px);
       background-color: rgba(0, 0, 0, 0);
     }
+  }
+}
+
+@media screen and (max-width: 1105px) {
+  .headerContainerInner {
+    flex-direction: column;
+    grid-gap: 12px;
+  }
+}
+
+@media screen and (max-width: 825px) {
+  .headerContainerInner {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .headerContainerInner {
+    flex-direction: column;
   }
 }
