@@ -39,7 +39,7 @@ export const SectionUnits = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
             </>
           }
           googleScore={4.8}
-          googleTotalCount={33}
+          googleTotalCount={34}
           googleLinkToReview="https://g.page/r/CVoeJp2NUm-xEBM/review"
         />
         <Unit
