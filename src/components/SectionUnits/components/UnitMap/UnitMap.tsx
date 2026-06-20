@@ -12,6 +12,9 @@ export const UnitMap = ({ position }: { position: LatLngExpression }) => {
   L.Icon.Default.mergeOptions({
     iconUrl,
     shadowUrl,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
   });
 
   return (
