@@ -1,5 +1,3 @@
-import "leaflet-defaulticon-compatibility";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import { LatLngExpression } from "leaflet";
 import style from "./Unit.module.scss";
 import pin from "@/assets/images/pin.svg";
