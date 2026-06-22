@@ -37,6 +37,10 @@ function App() {
       <SectionConvenios ref={conveniosRef} />
       <SectionUnits ref={unitsRef} />
       <SectionWhyDix ref={whyDixRef} />
+      <div
+        className="elfsight-app-489e6e7f-ef2c-456c-878a-3f4a13d2a975"
+        data-elfsight-app-lazy
+      ></div>
       <SectionDixMissionVision />
       <Footer
         servicesRef={servicesRef}
