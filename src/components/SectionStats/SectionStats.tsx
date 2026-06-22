@@ -6,7 +6,7 @@ export const SectionStats = () => {
     <div className={style.sectionStats}>
       <Stat title="🏛️5+" subtitle="Anos de experiência" />
       <Stat title="📊2mil+" subtitle="Exames realizados" />
-      <Stat title="👨‍⚕️100+" subtitle="Dentistas parceiros" />
+      <Stat title="👨‍⚕️300+" subtitle="Dentistas parceiros" />
     </div>
   );
 };
