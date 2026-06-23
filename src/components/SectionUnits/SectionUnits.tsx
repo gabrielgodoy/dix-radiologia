@@ -39,7 +39,7 @@ export const SectionUnits = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
             </>
           }
           googleScore={4.8}
-          googleTotalCount={34}
+          googleTotalCount={35}
           googleLinkToReview="https://g.page/r/CVoeJp2NUm-xEBM/review"
           elfsightGoogleReviewId="elfsight-app-47e94710-2092-434c-8f72-3365ae597e64"
         />
