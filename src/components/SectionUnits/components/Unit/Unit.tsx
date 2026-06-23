@@ -14,6 +14,7 @@ interface UnitProps {
   googleScore: number;
   googleTotalCount: number;
   googleLinkToReview: string;
+  elfsightGoogleReviewId: string;
 }
 
 export const Unit = ({
@@ -25,6 +26,7 @@ export const Unit = ({
   googleScore,
   googleTotalCount,
   googleLinkToReview,
+  elfsightGoogleReviewId,
 }: UnitProps) => {
   return (
     <div className={style.unitContainer}>
@@ -51,11 +53,12 @@ export const Unit = ({
           </div>
         </div>
         <div className={style.infoBlock}>
-          <GoogleReview
+          {/* <GoogleReview
             score={googleScore}
             totalCount={googleTotalCount}
             linkToReview={googleLinkToReview}
-          />
+          /> */}
+          <div className={elfsightGoogleReviewId} data-elfsight-app-lazy></div>
         </div>
       </div>
     </div>
