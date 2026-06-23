@@ -21,6 +21,14 @@ function App() {
   const whyDixRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const hasRefreshed = sessionStorage.getItem("hasRefreshed");
+    if (!hasRefreshed) {
+      sessionStorage.setItem("hasRefreshed", "true");
+      window.location.reload();
+    }
+  }, []);
+
+  useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://elfsightcdn.com/platform.js";
     script.setAttribute("data-use-service-core", "");
