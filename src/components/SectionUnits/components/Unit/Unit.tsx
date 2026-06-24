@@ -3,6 +3,7 @@ import style from "./Unit.module.scss";
 import pin from "@/assets/images/pin.svg";
 import { UnitMap } from "../UnitMap/UnitMap";
 import { JSX } from "react/jsx-runtime";
+import { useFeatureFlagEnabled } from "posthog-js/react";
 import { GoogleReview } from "../GoogleReview/GoogleReview";
 
 interface UnitProps {
@@ -28,6 +29,10 @@ export const Unit = ({
   googleLinkToReview,
   elfsightGoogleReviewId,
 }: UnitProps) => {
+  const isElfsightWidgetEnabled = useFeatureFlagEnabled(
+    "isElfsightWidgetEnabled",
+  );
+
   return (
     <div className={style.unitContainer}>
       <UnitMap position={position} />
@@ -58,7 +63,9 @@ export const Unit = ({
             totalCount={googleTotalCount}
             linkToReview={googleLinkToReview}
           /> */}
-          <div className={elfsightGoogleReviewId} data-elfsight-app-lazy></div>
+          {isElfsightWidgetEnabled && (
+            <div className={elfsightGoogleReviewId} data-elfsight-app-lazy />
+          )}
         </div>
       </div>
     </div>

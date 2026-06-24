@@ -12,6 +12,7 @@ import { SectionUnits } from "./components/SectionUnits/SectionUnits";
 import { SectionWhyDix } from "./components/SectionWhyDix/SectionWhyDix";
 import { SectionDixMissionVision } from "./components/SectionDixMissionVision/SectionDixMissionVision";
 import { Footer } from "./components/Footer/Footer";
+import { useFeatureFlagEnabled } from "posthog-js/react";
 
 function App() {
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -39,6 +40,10 @@ function App() {
     };
   }, []);
 
+  const isElfsightWidgetEnabled = useFeatureFlagEnabled(
+    "isElfsightWidgetEnabled",
+  );
+
   return (
     <main>
       <img src={rays} alt="Raios da logo da Dix" className={style.rays} />
@@ -56,11 +61,13 @@ function App() {
       <SectionConvenios ref={conveniosRef} />
       <SectionUnits ref={unitsRef} />
       <SectionWhyDix ref={whyDixRef} />
-      <div
-        className="elfsight-app-489e6e7f-ef2c-456c-878a-3f4a13d2a975"
-        data-elfsight-app-lazy
-        style={{ marginTop: "30px" }}
-      ></div>
+      {isElfsightWidgetEnabled && (
+        <div
+          className="elfsight-app-489e6e7f-ef2c-456c-878a-3f4a13d2a975"
+          data-elfsight-app-lazy
+          style={{ marginTop: "30px" }}
+        />
+      )}
       <SectionDixMissionVision />
       <Footer
         servicesRef={servicesRef}
