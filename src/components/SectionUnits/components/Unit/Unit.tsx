@@ -79,8 +79,8 @@ export const Unit = ({
             linkToReview={googleLinkToReview}
           /> */}
           {isElfsightWidgetEnabled && (
-            <div key={key} ref={containerRef}>
-              <ElfsightWidget widgetId={elfsightGoogleReviewId} />
+            <div ref={containerRef}>
+              <ElfsightWidget key={key} widgetId={elfsightGoogleReviewId} />
             </div>
           )}
         </div>
