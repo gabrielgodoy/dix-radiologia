@@ -40,11 +40,12 @@ export const Unit = ({
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const container = containerRef.current;
-      const isEmpty = !container || container.innerHTML.trim() === "";
-      if (isEmpty) setKey((k: number) => k + 1);
-    }, 3000);
-
+      const shadowRoot =
+        containerRef.current?.querySelector(".es-embed-root")?.shadowRoot;
+      const hasSlides =
+        shadowRoot?.querySelector(".swiper-wrapper")?.children.length ?? 0;
+      if (!hasSlides) setKey((k) => k + 1);
+    }, 5000);
     return () => clearTimeout(timer);
   }, [key]);
 
