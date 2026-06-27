@@ -44,7 +44,15 @@ export const Unit = ({
         containerRef.current?.querySelector(".es-embed-root")?.shadowRoot;
       const hasSlides =
         shadowRoot?.querySelector(".swiper-wrapper")?.children.length ?? 0;
-      if (!hasSlides) setKey((k) => k + 1);
+
+      if (!hasSlides) {
+        const eapps = (window as any).eapps;
+        if (eapps?.apps?.initialize) {
+          eapps.apps.initialize();
+        } else {
+          setKey((k) => k + 1);
+        }
+      }
     }, 5000);
     return () => clearTimeout(timer);
   }, [key]);
