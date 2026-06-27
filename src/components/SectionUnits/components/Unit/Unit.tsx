@@ -37,6 +37,7 @@ export const Unit = ({
   const isElfsightWidgetEnabled = useFeatureFlagEnabled(
     "isElfsightWidgetEnabled",
   );
+  const PLATFORM_URL = "https://static.elfsight.com/platform/platform.js";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -46,12 +47,10 @@ export const Unit = ({
         shadowRoot?.querySelector(".swiper-wrapper")?.children.length ?? 0;
 
       if (!hasSlides) {
-        const eapps = (window as any).eapps;
-        if (eapps?.apps?.initialize) {
-          eapps.apps.initialize();
-        } else {
-          setKey((k) => k + 1);
-        }
+        // Remove the failed script so useLoadPlatform re-injects it on remount
+        document.querySelector(`script[src="${PLATFORM_URL}"]`)?.remove();
+        delete (window as any).eapps;
+        setKey((k) => k + 1);
       }
     }, 5000);
     return () => clearTimeout(timer);
