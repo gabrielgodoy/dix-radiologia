@@ -39,6 +39,7 @@ function App() {
     const timer = setTimeout(() => {
       if (window.eapps?.Platform) {
         window.eapps.Platform.initializeWidgets();
+        console.log("window.eapps.Platform", window.eapps?.Platform);
       }
     }, 500);
     return () => clearTimeout(timer);

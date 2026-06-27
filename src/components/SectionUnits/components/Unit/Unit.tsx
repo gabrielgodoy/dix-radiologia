@@ -6,6 +6,7 @@ import { UnitMap } from "../UnitMap/UnitMap";
 import { JSX } from "react/jsx-runtime";
 import { useFeatureFlagEnabled } from "posthog-js/react";
 import { GoogleReview } from "../GoogleReview/GoogleReview";
+import { useEffect, useRef, useState } from "react";
 
 interface UnitProps {
   position: LatLngExpression;
@@ -30,9 +31,22 @@ export const Unit = ({
   googleLinkToReview,
   elfsightGoogleReviewId,
 }: UnitProps) => {
+  const [key, setKey] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const isElfsightWidgetEnabled = useFeatureFlagEnabled(
     "isElfsightWidgetEnabled",
   );
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const container = containerRef.current;
+      const isEmpty = !container || container.innerHTML.trim() === "";
+      if (isEmpty) setKey((k: number) => k + 1);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [key]);
 
   return (
     <div className={style.unitContainer}>
@@ -65,7 +79,9 @@ export const Unit = ({
             linkToReview={googleLinkToReview}
           /> */}
           {isElfsightWidgetEnabled && (
-            <ElfsightWidget widgetId={elfsightGoogleReviewId} />
+            <div key={key} ref={containerRef}>
+              <ElfsightWidget widgetId={elfsightGoogleReviewId} />
+            </div>
           )}
         </div>
       </div>
