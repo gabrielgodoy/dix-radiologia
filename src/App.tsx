@@ -1,3 +1,4 @@
+import { ElfsightWidget } from "react-elfsight-widget";
 import { useEffect, useRef } from "react";
 import style from "./App.module.scss";
 import rays from "./assets/images/rays.png";
@@ -14,35 +15,34 @@ import { SectionDixMissionVision } from "./components/SectionDixMissionVision/Se
 import { Footer } from "./components/Footer/Footer";
 import { useFeatureFlagEnabled } from "posthog-js/react";
 
+declare global {
+  interface Window {
+    eapps?: {
+      Platform?: {
+        initializeWidgets: () => void;
+      };
+    };
+  }
+}
+
 function App() {
   const servicesRef = useRef<HTMLDivElement>(null);
   const techRef = useRef<HTMLDivElement>(null);
   const conveniosRef = useRef<HTMLDivElement>(null);
   const unitsRef = useRef<HTMLDivElement>(null);
   const whyDixRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const hasRefreshed = sessionStorage.getItem("hasRefreshed");
-    if (!hasRefreshed) {
-      sessionStorage.setItem("hasRefreshed", "true");
-      window.location.reload();
-    }
-  }, []);
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://elfsightcdn.com/platform.js";
-    script.setAttribute("data-use-service-core", "");
-    script.defer = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   const isElfsightWidgetEnabled = useFeatureFlagEnabled(
     "isElfsightWidgetEnabled",
   );
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (window.eapps?.Platform) {
+        window.eapps.Platform.initializeWidgets();
+      }
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <main>
@@ -62,11 +62,12 @@ function App() {
       <SectionUnits ref={unitsRef} />
       <SectionWhyDix ref={whyDixRef} />
       {isElfsightWidgetEnabled && (
-        <div
-          className="elfsight-app-489e6e7f-ef2c-456c-878a-3f4a13d2a975"
-          data-elfsight-app-lazy
-          style={{ marginTop: "30px" }}
-        />
+        <div style={{ marginTop: "30px" }}>
+          <ElfsightWidget
+            widgetId="489e6e7f-ef2c-456c-878a-3f4a13d2a975"
+            lazy
+          />
+        </div>
       )}
       <SectionDixMissionVision />
       <Footer

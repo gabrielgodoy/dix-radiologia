@@ -20,9 +20,7 @@ posthog.init(import.meta.env.VITE_POSTHOG_PROJECT_TOKEN, {
 
 const root = createRoot(container);
 root.render(
-  <StrictMode>
-    <PostHogProvider client={posthog}>
-      <App />
-    </PostHogProvider>
-  </StrictMode>,
+  <PostHogProvider client={posthog}>
+    <App />
+  </PostHogProvider>,
 );

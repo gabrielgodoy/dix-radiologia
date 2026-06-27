@@ -1,3 +1,4 @@
+import { ElfsightWidget } from "react-elfsight-widget";
 import { LatLngExpression } from "leaflet";
 import style from "./Unit.module.scss";
 import pin from "@/assets/images/pin.svg";
@@ -64,7 +65,7 @@ export const Unit = ({
             linkToReview={googleLinkToReview}
           /> */}
           {isElfsightWidgetEnabled && (
-            <div className={elfsightGoogleReviewId} data-elfsight-app-lazy />
+            <ElfsightWidget widgetId={elfsightGoogleReviewId} />
           )}
         </div>
       </div>
