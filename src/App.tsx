@@ -1,5 +1,5 @@
 import { ElfsightWidget } from "react-elfsight-widget";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import style from "./App.module.scss";
 import rays from "./assets/images/rays.png";
 
@@ -34,6 +34,8 @@ function App() {
   const isElfsightWidgetEnabled = useFeatureFlagEnabled(
     "isElfsightWidgetEnabled",
   );
+  const [key, setKey] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -44,6 +46,16 @@ function App() {
     }, 500);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const container = containerRef.current;
+      const isEmpty = !container || container.innerHTML.trim() === "";
+      if (isEmpty) setKey((k: number) => k + 1);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [key]);
 
   return (
     <main>
@@ -63,8 +75,9 @@ function App() {
       <SectionUnits ref={unitsRef} />
       <SectionWhyDix ref={whyDixRef} />
       {isElfsightWidgetEnabled && (
-        <div style={{ marginTop: "30px" }}>
+        <div ref={containerRef} style={{ marginTop: "30px" }}>
           <ElfsightWidget
+            key={key}
             widgetId="489e6e7f-ef2c-456c-878a-3f4a13d2a975"
             lazy
           />
