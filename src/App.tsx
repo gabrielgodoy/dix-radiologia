@@ -75,7 +75,11 @@ function App() {
       <SectionUnits ref={unitsRef} />
       <SectionWhyDix ref={whyDixRef} />
       {isElfsightWidgetEnabled && (
-        <div ref={containerRef} style={{ marginTop: "30px" }}>
+        <div
+          ref={containerRef}
+          className="instagram-feed-container"
+          style={{ marginTop: "30px" }}
+        >
           <ElfsightWidget
             key={key}
             widgetId="489e6e7f-ef2c-456c-878a-3f4a13d2a975"
